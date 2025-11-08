@@ -257,7 +257,7 @@
         
         /* Hide elements for limited view */
         .hide-in-limited {
-            display: none !important;
+            display: none;
         }
         
         /* Content Sections */
@@ -899,9 +899,9 @@
             
             // Always show full view by default - ignore view=limited parameter
             // This ensures QR codes and direct links always show all services
-            // Show all elements - full view is the default
+            // Remove the hide-in-limited class to show all elements
             document.querySelectorAll('.hide-in-limited').forEach(element => {
-                element.style.display = '';
+                element.classList.remove('hide-in-limited');
             });
             
             // If view=limited exists in URL, remove it to show full view
