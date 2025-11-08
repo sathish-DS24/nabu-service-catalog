@@ -897,8 +897,10 @@
             const urlParams = new URLSearchParams(window.location.search);
             const view = urlParams.get('view');
             
+            // Only hide tax services if explicitly set to 'limited'
+            // Base URL (no parameters) will always show full view
             if (view === 'limited') {
-                // Hide tax-related elements
+                // Hide tax-related elements for limited view
                 document.querySelectorAll('.hide-in-limited').forEach(element => {
                     element.style.display = 'none';
                 });
@@ -920,7 +922,8 @@
                 if (taxButton) taxButton.classList.remove('active');
                 if (itButton) itButton.classList.add('active');
             } else {
-                // Show all elements (full view or no parameter)
+                // Show all elements - this is the default (full view)
+                // Works for base URL (no parameters) or any other parameter value
                 document.querySelectorAll('.hide-in-limited').forEach(element => {
                     element.style.display = '';
                 });
