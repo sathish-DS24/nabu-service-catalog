@@ -897,49 +897,24 @@
             const urlParams = new URLSearchParams(window.location.search);
             const view = urlParams.get('view');
             
-            // Only hide tax services if explicitly set to 'limited'
-            // Base URL (no parameters) will always show full view
+            // Always show full view by default - ignore view=limited parameter
+            // This ensures QR codes and direct links always show all services
+            // Show all elements - full view is the default
+            document.querySelectorAll('.hide-in-limited').forEach(element => {
+                element.style.display = '';
+            });
+            
+            // If view=limited exists in URL, remove it to show full view
             if (view === 'limited') {
-                // Hide tax-related elements for limited view
-                document.querySelectorAll('.hide-in-limited').forEach(element => {
-                    element.style.display = 'none';
-                });
-                
-                // Ensure IT section is shown by default in limited view
-                const itSection = document.getElementById('it-section');
-                const taxSection = document.getElementById('tax-section');
-                
-                if (taxSection && taxSection.classList.contains('active')) {
-                    taxSection.classList.remove('active');
-                }
-                if (itSection) {
-                    itSection.classList.add('active');
-                }
-                
-                // Set IT button as active
-                const itButton = document.querySelector('.btn-it');
-                const taxButton = document.querySelector('.btn-tax');
-                if (taxButton) taxButton.classList.remove('active');
-                if (itButton) itButton.classList.add('active');
-            } else {
-                // Show all elements - this is the default (full view)
-                // Works for base URL (no parameters) or any other parameter value
-                document.querySelectorAll('.hide-in-limited').forEach(element => {
-                    element.style.display = '';
-                });
+                // Remove the view=limited parameter from URL without page reload
+                urlParams.delete('view');
+                const newSearch = urlParams.toString();
+                const newUrl = window.location.pathname + (newSearch ? '?' + newSearch : '') + window.location.hash;
+                window.history.replaceState({}, document.title, newUrl);
             }
         });
         
         function showCategory(category) {
-            // Check if we're in limited view and trying to access tax
-            const urlParams = new URLSearchParams(window.location.search);
-            const view = urlParams.get('view');
-            
-            if (view === 'limited' && category === 'tax') {
-                // Don't allow access to tax section in limited view
-                return;
-            }
-            
             // Hide all sections
             document.querySelectorAll('.content-section').forEach(section => {
                 section.classList.remove('active');
