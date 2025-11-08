@@ -470,6 +470,85 @@
             color: #ecf0f1;
         }
         
+        /* Social Media Section */
+        .social-media-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+        }
+        
+        .social-media-section h2 {
+            margin-bottom: 25px;
+            font-size: 2em;
+            color: #2c3e50;
+        }
+        
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 25px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            min-width: 150px;
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .social-btn span {
+            margin-right: 10px;
+            font-size: 1.3em;
+        }
+        
+        .social-btn-google {
+            background: linear-gradient(135deg, #4285F4 0%, #34A853 50%, #FBBC05 75%, #EA4335 100%);
+        }
+        
+        .social-btn-google:hover {
+            background: linear-gradient(135deg, #357ae8 0%, #2d8f47 50%, #f0b400 75%, #d93025 100%);
+        }
+        
+        .social-btn-youtube {
+            background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+        }
+        
+        .social-btn-youtube:hover {
+            background: linear-gradient(135deg, #e60000 0%, #b30000 100%);
+        }
+        
+        .social-btn-instagram {
+            background: linear-gradient(135deg, #E4405F 0%, #F77737 50%, #FCAF45 75%, #833AB4 100%);
+        }
+        
+        .social-btn-instagram:hover {
+            background: linear-gradient(135deg, #d32f4f 0%, #e66a2a 50%, #e69e3e 75%, #72329f 100%);
+        }
+        
+        .social-btn-linkedin {
+            background: linear-gradient(135deg, #0077B5 0%, #005885 100%);
+        }
+        
+        .social-btn-linkedin:hover {
+            background: linear-gradient(135deg, #006399 0%, #004a6b 100%);
+        }
+        
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2.5em;
@@ -481,6 +560,14 @@
             .category-btn {
                 width: 100%;
                 max-width: 300px;
+            }
+            .social-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .social-btn {
+                width: 100%;
+                max-width: 250px;
             }
         }
     </style>
@@ -861,6 +948,25 @@
                         <li>Cloud-based Data Storage</li>
                     </ul>
                 </div>
+            </div>
+        </div>
+        
+        <!-- Social Media Section -->
+        <div class="social-media-section">
+            <h2>Connect With Us</h2>
+            <div class="social-buttons">
+                <a href="https://g.page/r/CdpEWA6wSCT_EAI/review" target="_blank" class="social-btn social-btn-google">
+                    <span>🔍</span> Google Reviews
+                </a>
+                <a href="http://www.youtube.com/@NabuTechnologies" target="_blank" class="social-btn social-btn-youtube">
+                    <span>▶️</span> YouTube
+                </a>
+                <a href="https://www.instagram.com/nabu_tech/?utm_source=qr&igsh=MTQxZ3BkeWg0dWU4bA%3D%3D#" target="_blank" class="social-btn social-btn-instagram">
+                    <span>📷</span> Instagram
+                </a>
+                <a href="https://www.linkedin.com/company/nabu-technologies/" target="_blank" class="social-btn social-btn-linkedin">
+                    <span>💼</span> LinkedIn
+                </a>
             </div>
         </div>
         
