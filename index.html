@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NABU Group - Complete Service Portfolio</title>
+    <title>NABU Technologies - Business Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -28,7 +28,7 @@
         
         .header {
             text-align: center;
-            padding: 50px 0;
+            padding: 60px 20px;
             background: 
                 radial-gradient(ellipse at center, #1a1a2e 0%, #16213e 50%, #0f0f23 100%),
                 linear-gradient(135deg, #667eea 0%, #764ba2 50%, #27ae60 100%);
@@ -46,41 +46,22 @@
             right: 0;
             bottom: 0;
             background: 
-                /* Stars */
                 radial-gradient(circle at 15% 25%, #ffffff 1px, transparent 1px),
                 radial-gradient(circle at 85% 15%, #ffffff 1px, transparent 1px),
                 radial-gradient(circle at 25% 75%, #ffffff 1px, transparent 1px),
                 radial-gradient(circle at 75% 85%, #ffffff 1px, transparent 1px),
                 radial-gradient(circle at 45% 35%, #ffffff 1px, transparent 1px),
-                radial-gradient(circle at 65% 65%, #ffffff 1px, transparent 1px),
-                radial-gradient(circle at 5% 50%, #ffffff 1px, transparent 1px),
-                radial-gradient(circle at 95% 40%, #ffffff 1px, transparent 1px),
-                radial-gradient(circle at 35% 10%, #ffffff 1px, transparent 1px),
-                radial-gradient(circle at 55% 90%, #ffffff 1px, transparent 1px),
-                radial-gradient(circle at 10% 85%, #ffffff 1px, transparent 1px),
-                radial-gradient(circle at 90% 60%, #ffffff 1px, transparent 1px),
-                radial-gradient(circle at 20% 45%, #ffffff 1px, transparent 1px),
-                radial-gradient(circle at 80% 25%, #ffffff 1px, transparent 1px),
-                radial-gradient(circle at 50% 5%, #ffffff 1px, transparent 1px),
-                radial-gradient(circle at 30% 95%, #ffffff 1px, transparent 1px);
-            background-size: 100px 100px, 150px 150px, 120px 120px, 80px 80px, 200px 200px, 90px 90px, 110px 110px, 130px 130px, 70px 70px, 160px 160px, 140px 140px, 95px 95px, 180px 180px, 105px 105px, 75px 75px, 125px 125px;
+                radial-gradient(circle at 65% 65%, #ffffff 1px, transparent 1px);
+            background-size: 100px 100px, 150px 150px, 120px 120px, 80px 80px, 200px 200px, 90px 90px;
             animation: twinkle 4s ease-in-out infinite;
             z-index: 1;
         }
         
-        .header::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: none; /* shooting stars removed */
-            animation: none;
-            z-index: 1;
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
         }
-
-        /* Shooting stars layer (from popular CSS night-sky patterns) */
+        
         .shooting-stars {
             position: absolute;
             inset: 0;
@@ -88,17 +69,16 @@
             pointer-events: none;
             overflow: hidden;
         }
+        
         .shooting-star {
             position: absolute;
             width: 2px;
             height: 2px;
             background: transparent;
-            border-radius: 50%;
-            box-shadow: none;
             opacity: 0;
-            transform: translate3d(0,0,0) rotate(0deg);
-            animation: starTrail 2.8s linear infinite;
+            animation: starTrail 3s linear infinite;
         }
+        
         .shooting-star::before {
             content: '';
             position: absolute;
@@ -111,139 +91,16 @@
             border-radius: 2px;
             filter: drop-shadow(0 0 6px rgba(255,255,255,0.8));
         }
+        
         @keyframes starTrail {
-            0% { opacity: 0; transform: translate3d(0,0,0) rotate(0deg); }
+            0% { opacity: 0; transform: translate3d(0,0,0); }
             10% { opacity: 1; }
-            50% { transform: translate3d(-200px, -150px, 0) rotate(0deg); }
-            100% { opacity: 0; transform: translate3d(-400px, -300px, 0) rotate(0deg); }
-        }
-        /* Star positions, delays and durations - down-right to up-left movement */
-        .shooting-star:nth-child(1) { top: 80%; left: 90%; animation-delay: 2s; animation-duration: 3s; }
-        .shooting-star:nth-child(2) { top: 75%; left: 95%; animation-delay: 6s; animation-duration: 2.8s; }
-        
-        /* Twinkling stars */
-        .twinkling-star {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background: #fff;
-            border-radius: 50%;
-            box-shadow: 0 0 8px 2px rgba(255,255,255,0.9), 0 0 16px 4px rgba(255,255,255,0.6);
-            animation: twinkle 3s ease-in-out infinite;
+            50% { transform: translate3d(-200px, -150px, 0); }
+            100% { opacity: 0; transform: translate3d(-400px, -300px, 0); }
         }
         
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.6; transform: scale(1); }
-            25% { opacity: 1; transform: scale(1.5); }
-            50% { opacity: 0.8; transform: scale(1.2); }
-            75% { opacity: 1; transform: scale(1.8); }
-        }
-        
-        /* Twinkling star positions with different delays and durations */
-        .twinkling-star:nth-child(1) { top: 15%; left: 20%; animation-delay: 0s; animation-duration: 2.1s; }
-        .twinkling-star:nth-child(2) { top: 25%; left: 80%; animation-delay: 0.3s; animation-duration: 3.7s; }
-        .twinkling-star:nth-child(3) { top: 35%; left: 15%; animation-delay: 1.2s; animation-duration: 2.8s; }
-        .twinkling-star:nth-child(4) { top: 45%; left: 85%; animation-delay: 0.8s; animation-duration: 4.2s; }
-        .twinkling-star:nth-child(5) { top: 55%; left: 30%; animation-delay: 2.5s; animation-duration: 3.1s; }
-        .twinkling-star:nth-child(6) { top: 65%; left: 70%; animation-delay: 1.7s; animation-duration: 2.4s; }
-        .twinkling-star:nth-child(7) { top: 75%; left: 10%; animation-delay: 3.1s; animation-duration: 3.9s; }
-        .twinkling-star:nth-child(8) { top: 85%; left: 60%; animation-delay: 0.6s; animation-duration: 2.7s; }
-        .twinkling-star:nth-child(9) { top: 20%; left: 50%; animation-delay: 2.8s; animation-duration: 4.1s; }
-        .twinkling-star:nth-child(10) { top: 40%; left: 40%; animation-delay: 1.4s; animation-duration: 3.3s; }
-        .twinkling-star:nth-child(11) { top: 60%; left: 90%; animation-delay: 0.9s; animation-duration: 2.6s; }
-        .twinkling-star:nth-child(12) { top: 80%; left: 25%; animation-delay: 2.2s; animation-duration: 3.8s; }
-        
-        /* Floating tech elements */
-        .tech-elements {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 1;
-            pointer-events: none;
-        }
-        
-        .tech-icon {
-            position: absolute;
-            width: 45px;
-            height: 45px;
-            opacity: 0.9;
-            animation: bounceTech 2s ease-in-out infinite;
-            filter: drop-shadow(0 0 12px rgba(255,255,255,0.6));
-            background: rgba(255,255,255,0.25);
-            padding: 8px;
-            border-radius: 10px;
-            border: 2px solid rgba(255,255,255,0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .tech-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            filter: brightness(0) invert(1);
-        }
-        
-        .tech-icon:nth-child(7) {
-            background: rgba(255,255,255,0.35);
-            border: 3px solid rgba(255,255,255,0.6);
-        }
-        
-        .tech-icon:nth-child(8) {
-            background: rgba(255,255,255,0.35);
-            border: 3px solid rgba(255,255,255,0.6);
-        }
-        
-        .tech-icon:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
-        .tech-icon:nth-child(2) { top: 20%; right: 5%; animation-delay: 0.3s; }
-        .tech-icon:nth-child(3) { top: 60%; left: 5%; animation-delay: 0.6s; }
-        .tech-icon:nth-child(4) { top: 70%; right: 5%; animation-delay: 0.9s; }
-        .tech-icon:nth-child(5) { top: 5%; left: 25%; animation-delay: 1.2s; }
-        .tech-icon:nth-child(6) { top: 80%; right: 25%; animation-delay: 1.5s; }
-        .tech-icon:nth-child(7) { top: 5%; right: 25%; animation-delay: 1.8s; }
-        .tech-icon:nth-child(8) { top: 80%; left: 25%; animation-delay: 2.1s; }
-        
-        @keyframes twinkle {
-            0%, 100% { 
-                opacity: 0.3; 
-                transform: scale(1); 
-            }
-            50% { 
-                opacity: 1; 
-                transform: scale(1.2); 
-            }
-        }
-        
-        @keyframes shootingStars {
-            0% { 
-                transform: translateX(-100%) translateY(-100%); 
-                opacity: 0; 
-            }
-            10% { 
-                opacity: 1; 
-            }
-            90% { 
-                opacity: 1; 
-            }
-            100% { 
-                transform: translateX(100%) translateY(100%); 
-                opacity: 0; 
-            }
-        }
-        
-        @keyframes bounceTech {
-            0%, 100% { 
-                transform: translateY(0px) scale(1); 
-                opacity: 0.8; 
-            }
-            50% { 
-                transform: translateY(-15px) scale(1.1); 
-                opacity: 1; 
-            }
-        }
+        .shooting-star:nth-child(1) { top: 80%; left: 90%; animation-delay: 2s; }
+        .shooting-star:nth-child(2) { top: 75%; left: 95%; animation-delay: 6s; }
         
         .logo-container {
             margin-bottom: 20px;
@@ -270,7 +127,7 @@
             font-size: 3.5em;
             margin-bottom: 15px;
             font-weight: 300;
-            animation: titleSlideIn 1.2s ease-out, titleGlow 2s ease-in-out 1.2s infinite alternate;
+            animation: titleSlideIn 1.2s ease-out;
             text-shadow: 0 0 20px rgba(255,255,255,0.3);
             position: relative;
             z-index: 2;
@@ -287,28 +144,11 @@
             }
         }
         
-        @keyframes titleGlow {
-            0% {
-                text-shadow: 0 0 20px rgba(255,255,255,0.3);
-            }
-            100% {
-                text-shadow: 0 0 30px rgba(255,255,255,0.6), 0 0 40px rgba(255,255,255,0.3);
-            }
-        }
-        
         .header .subtitle {
             font-size: 1.4em;
             opacity: 0.9;
             margin-bottom: 20px;
             animation: fadeInUp 1.5s ease-out 0.3s both;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .header .tagline {
-            font-size: 1.1em;
-            opacity: 0.8;
-            animation: fadeInUp 1.5s ease-out 0.6s both;
             position: relative;
             z-index: 2;
         }
@@ -324,68 +164,156 @@
             }
         }
         
-        .company-sections {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
+        /* Category Buttons */
+        .category-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+            padding: 0 20px;
         }
         
-        .company-header {
-            text-align: center;
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 30px;
+        .category-btn {
+            padding: 18px 35px;
+            font-size: 1.1em;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
         }
         
-        .tech-header {
+        .category-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .category-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .category-btn span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .btn-it {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
         }
         
-        .tax-header {
+        .btn-it:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-tax {
             background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
             color: white;
         }
         
-        .company-header h2 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 400;
-            animation: companyTitleSlide 1s ease-out;
+        .btn-tax:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
         }
         
-        .company-header p {
-            font-size: 1.2em;
-            opacity: 0.9;
-            animation: companySubtitleFade 1.2s ease-out 0.3s both;
+        .btn-integrator {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
         }
         
-        @keyframes companyTitleSlide {
+        .btn-integrator:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.4);
+        }
+        
+        .btn-saas {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+        }
+        
+        .btn-saas:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+        }
+        
+        .category-btn.active {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        
+        /* Content Sections */
+        .content-section {
+            display: none;
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
             0% {
                 opacity: 0;
-                transform: translateX(-100px);
+                transform: translateY(30px);
             }
             100% {
                 opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes companySubtitleFade {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 0.9;
                 transform: translateY(0);
             }
         }
         
+        .section-header {
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            color: white;
+        }
+        
+        .it-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .tax-header {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+        }
+        
+        .integrator-header {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+        }
+        
+        .saas-header {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        }
+        
+        .section-header h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .section-header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        /* Service Cards */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
             margin-bottom: 30px;
         }
@@ -393,19 +321,13 @@
         .service-card {
             background: white;
             border-radius: 12px;
-            padding: 25px;
+            padding: 30px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-left: 4px solid;
             animation: cardSlideIn 0.8s ease-out;
             opacity: 0;
             animation-fill-mode: forwards;
-            position: relative;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
         }
         
         .service-card:nth-child(1) { animation-delay: 0.1s; }
@@ -414,9 +336,10 @@
         .service-card:nth-child(4) { animation-delay: 0.4s; }
         .service-card:nth-child(5) { animation-delay: 0.5s; }
         .service-card:nth-child(6) { animation-delay: 0.6s; }
-        
-        .saas-product:nth-child(1) { animation-delay: 0.1s; }
-        .saas-product:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(7) { animation-delay: 0.7s; }
+        .service-card:nth-child(8) { animation-delay: 0.8s; }
+        .service-card:nth-child(9) { animation-delay: 0.9s; }
+        .service-card:nth-child(10) { animation-delay: 1.0s; }
         
         @keyframes cardSlideIn {
             0% {
@@ -429,69 +352,20 @@
             }
         }
         
-        .tech-service {
-            border-left-color: #667eea;
-        }
-        
-        .tax-service {
-            border-left-color: #27ae60;
-        }
-        
         .service-card:hover {
             transform: translateY(-8px) scale(1.02);
             box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            z-index: 10;
         }
         
-        @keyframes cardHoverPulse {
-            0% { transform: translateY(-8px) scale(1.02); }
-            50% { transform: translateY(-12px) scale(1.05); }
-            100% { transform: translateY(-8px) scale(1.02); }
-        }
+        .it-card { border-left-color: #667eea; }
+        .tax-card { border-left-color: #27ae60; }
+        .integrator-card { border-left-color: #f39c12; }
+        .saas-card { border-left-color: #3498db; }
         
         .service-icon {
             font-size: 2.5em;
-            margin-bottom: 25px;
-            animation: iconBounce 2s ease-in-out infinite;
-            transition: transform 0.3s ease;
-            display: block !important;
-            text-align: center !important;
-            width: auto !important;
-            position: static !important;
-            z-index: 1 !important;
-        }
-        
-        /* Override tech-icon absolute positioning for service cards */
-        .service-card .tech-icon {
-            position: static !important;
-            width: auto !important;
-            height: auto !important;
-            opacity: 1 !important;
-            filter: none !important;
-            animation: iconBounce 2s ease-in-out infinite !important;
-        }
-        
-        .service-card:hover .service-icon {
-            animation: iconSpin 0.8s ease-in-out;
-        }
-        
-        @keyframes iconBounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-        
-        @keyframes iconSpin {
-            0% { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(180deg) scale(1.2); }
-            100% { transform: rotate(360deg) scale(1); }
-        }
-        
-        .tech-icon {
-            color: #667eea;
-        }
-        
-        .tax-icon {
-            color: #27ae60;
+            margin-bottom: 15px;
+            display: block;
         }
         
         .service-title {
@@ -499,10 +373,6 @@
             margin-bottom: 12px;
             color: #2c3e50;
             font-weight: 600;
-            margin-top: 0;
-            text-align: center;
-            position: relative !important;
-            z-index: 2 !important;
         }
         
         .service-description {
@@ -510,9 +380,6 @@
             margin-bottom: 15px;
             line-height: 1.7;
             font-size: 0.95em;
-            text-align: center;
-            position: relative !important;
-            z-index: 2 !important;
         }
         
         .service-features {
@@ -527,50 +394,19 @@
             font-size: 0.9em;
         }
         
-        .tech-features li:before {
+        .service-features li:before {
             content: "✓";
             position: absolute;
             left: 0;
-            color: #667eea;
             font-weight: bold;
         }
         
-        .tax-features li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #27ae60;
-            font-weight: bold;
-        }
+        .it-card .service-features li:before { color: #667eea; }
+        .tax-card .service-features li:before { color: #27ae60; }
+        .integrator-card .service-features li:before { color: #f39c12; }
+        .saas-card .service-features li:before { color: #3498db; }
         
-        .compliance-badge {
-            background: #e8f5e8;
-            border: 2px solid #27ae60;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-            text-align: center;
-        }
-        
-        .compliance-badge h3 {
-            color: #27ae60;
-            margin-bottom: 10px;
-        }
-        
-        .why-choose {
-            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            margin: 30px 0;
-        }
-        
-        .why-choose h2 {
-            margin-bottom: 15px;
-            font-size: 2em;
-        }
-        
+        /* Contact Section */
         .contact-section {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
@@ -603,126 +439,17 @@
             color: #ecf0f1;
         }
         
-        .tech-highlights {
-            background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
-            border: 2px solid #667eea;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-            animation: highlightSlide 1s ease-out 0.5s both;
-        }
-        
-        .tax-highlights {
-            background: linear-gradient(135deg, #27ae6020 0%, #2ecc7120 100%);
-            border: 2px solid #27ae60;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-            animation: highlightSlide 1s ease-out 0.5s both;
-        }
-        
-        @keyframes highlightSlide {
-            0% {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        .highlights h3 {
-            margin-bottom: 10px;
-            font-size: 1.3em;
-        }
-        
-        .tech-highlights h3 {
-            color: #667eea;
-        }
-        
-        .tax-highlights h3 {
-            color: #27ae60;
-        }
-        
-        .saas-product {
-            border: 2px solid #667eea;
-            background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
-            animation: saasProductGlow 3s ease-in-out infinite alternate;
-            opacity: 1 !important;
-            z-index: 2;
-        }
-        
-        .saas-product .service-icon {
-            margin-bottom: 20px !important;
-            display: block !important;
-            text-align: center !important;
-        }
-        
-        .saas-product .service-title {
-            text-align: center !important;
-            margin-bottom: 15px !important;
-        }
-        
-        .saas-product .service-description {
-            text-align: center !important;
-            margin-bottom: 20px !important;
-        }
-        
-        .saas-product .service-features {
-            text-align: left !important;
-        }
-        
-        /* NABU Technologies service cards alignment - Force override */
-        .services-grid .service-card.tech-service .service-title {
-            text-align: center !important;
-            margin: 0 auto !important;
-        }
-        
-        .services-grid .service-card.tech-service .service-description {
-            text-align: center !important;
-            margin: 0 auto !important;
-        }
-        
-        .services-grid .service-card.tech-service .service-features {
-            text-align: left !important;
-            align-self: flex-start !important;
-            width: 100% !important;
-        }
-        
-        .services-grid .service-card.tech-service .service-icon {
-            text-align: center !important;
-            margin: 0 auto 20px auto !important;
-        }
-        
-        @keyframes saasProductGlow {
-            0% {
-                box-shadow: 0 8px 25px rgba(102, 126, 234, 0.1);
-            }
-            100% {
-                box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3), 0 0 20px rgba(102, 126, 234, 0.2);
-            }
-        }
-        
-        @media print {
-            body {
-                background-color: white;
-            }
-            .container {
-                box-shadow: none;
-            }
-            .service-card:hover {
-                transform: none;
-                box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            }
-        }
-        
         @media (max-width: 768px) {
-            .company-sections {
-                grid-template-columns: 1fr;
-            }
             .header h1 {
                 font-size: 2.5em;
+            }
+            .category-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .category-btn {
+                width: 100%;
+                max-width: 300px;
             }
         }
     </style>
@@ -730,280 +457,391 @@
 <body>
     <div class="container">
         <div class="header">
-        <div class="shooting-stars">
-            <div class="shooting-star"></div>
-            <div class="shooting-star"></div>
-        </div>
-        <div class="twinkling-stars">
-            <div class="twinkling-star"></div>
-            <div class="twinkling-star"></div>
-            <div class="twinkling-star"></div>
-            <div class="twinkling-star"></div>
-            <div class="twinkling-star"></div>
-            <div class="twinkling-star"></div>
-            <div class="twinkling-star"></div>
-            <div class="twinkling-star"></div>
-            <div class="twinkling-star"></div>
-            <div class="twinkling-star"></div>
-            <div class="twinkling-star"></div>
-            <div class="twinkling-star"></div>
-        </div>
-            <div class="tech-elements">
-                <div class="tech-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/anthropic.svg" alt="Claude" />
-                </div>
-                <div class="tech-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/openai.svg" alt="ChatGPT" />
-                </div>
-                <div class="tech-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/elevenlabs.svg" alt="ElevenLabs" />
-                </div>
-                <div class="tech-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/n8n.svg" alt="N8N" />
-                </div>
-                <div class="tech-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/make.svg" alt="Make" />
-                </div>
-                <div class="tech-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/zapier.svg" alt="Zapier" />
-                </div>
-                <div class="tech-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/google.svg" alt="Gemini" />
-                </div>
-                <div class="tech-icon">
-                    <img src="https://raw.githubusercontent.com/FlowiseAI/Flowise/main/packages/ui/public/logo.svg" alt="Flowise" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-                    <span style="display: none; font-size: 0.7em; font-weight: bold;">Flowise</span>
-                </div>
+            <div class="shooting-stars">
+                <div class="shooting-star"></div>
+                <div class="shooting-star"></div>
             </div>
             <div class="logo-container">
                 <div class="logo">
-                    <img src="nabu-logo.png" alt="NABU GROUP Logo" />
+                    <img src="nabu-logo.png" alt="NABU Technologies Logo" />
                 </div>
             </div>
-            <h1>NABU GROUP</h1>
+            <h1>NABU Technologies</h1>
             <p class="subtitle">Complete Business Solutions Portfolio</p>
-            <p class="tagline">Technology Innovation • Tax Expertise • Business Excellence</p>
         </div>
         
-        <div class="company-sections">
-            <!-- NABU Technologies Section -->
-            <div class="tech-section">
-                <div class="company-header tech-header">
-                    <h2>NABU Technologies</h2>
-                    <p>Micro-SaaS Company • Innovative Technology Solutions for Modern Businesses</p>
-                </div>
-                
-                <div class="tech-highlights">
-                    <h3>🚀 Micro-SaaS Excellence</h3>
-                    <p>Cutting-edge SaaS solutions that drive digital transformation and business growth</p>
-                </div>
-                
-                <!-- SaaS Products Section -->
-                <div class="saas-products">
-                    <h3 style="text-align: center; margin: 30px 0 20px 0; color: #667eea; font-size: 1.5em;">Our SaaS Products</h3>
-                    <div class="services-grid">
-                        <div class="service-card tech-service saas-product">
-                            <div class="service-icon tech-icon">👥</div>
-                            <h3 class="service-title">EMP Business</h3>
-                            <p class="service-description">Comprehensive employee management application that streamlines HR processes and enhances workforce productivity.</p>
-                            <ul class="service-features tech-features">
-                                <li>Employee Database Management</li>
-                                <li>Attendance & Time Tracking</li>
-                                <li>Payroll Processing</li>
-                                <li>Performance Management</li>
-                                <li>Leave Management System</li>
-                                <li>HR Analytics & Reports</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="service-card tech-service saas-product">
-                            <div class="service-icon tech-icon">📊</div>
-                            <h3 class="service-title">BarathBooks</h3>
-                            <p class="service-description">Advanced accounting software application designed for small to medium businesses with comprehensive financial management features.</p>
-                            <ul class="service-features tech-features">
-                                <li>Invoice Generation & Management</li>
-                                <li>Expense Tracking & Categorization</li>
-                                <li>Financial Reporting & Analytics</li>
-                                <li>Tax Calculation & Filing</li>
-                                <li>Multi-currency Support</li>
-                                <li>Cloud-based Data Storage</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <h3 style="text-align: center; margin: 20px 0; color: #2c3e50; font-size: 1.6em;">Our Services</h3>
-                <div class="services-grid">
-                    <div class="service-card tech-service">
-                        <div class="service-icon tech-icon">📱</div>
-                        <h3 class="service-title">Mobile App Development</h3>
-                        <p class="service-description">Transform your business ideas into powerful mobile applications that engage users and drive growth.</p>
-                        <ul class="service-features tech-features">
-                            <li>Native iOS & Android Development</li>
-                            <li>Cross-platform Solutions</li>
-                            <li>UI/UX Design Integration</li>
-                            <li>App Store Optimization</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="service-card tech-service">
-                        <div class="service-icon tech-icon">🌐</div>
-                        <h3 class="service-title">Web App Development</h3>
-                        <p class="service-description">Build scalable, secure, and high-performance web applications that deliver exceptional user experiences.</p>
-                        <ul class="service-features tech-features">
-                            <li>Custom Web Applications</li>
-                            <li>Progressive Web Apps (PWA)</li>
-                            <li>API Development & Integration</li>
-                            <li>Cloud Deployment & Scaling</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="service-card tech-service">
-                        <div class="service-icon tech-icon">💻</div>
-                        <h3 class="service-title">Website Development</h3>
-                        <p class="service-description">Create stunning, responsive websites that represent your brand perfectly and convert visitors into customers.</p>
-                        <ul class="service-features tech-features">
-                            <li>Responsive Web Design</li>
-                            <li>E-commerce Solutions</li>
-                            <li>Content Management Systems</li>
-                            <li>SEO Optimization</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="service-card tech-service">
-                        <div class="service-icon tech-icon">🎨</div>
-                        <h3 class="service-title">UI/UX Design</h3>
-                        <p class="service-description">Design intuitive and beautiful user interfaces that provide exceptional user experiences.</p>
-                        <ul class="service-features tech-features">
-                            <li>User Research & Analysis</li>
-                            <li>Wireframing & Prototyping</li>
-                            <li>Visual Design & Branding</li>
-                            <li>Usability Testing</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="service-card tech-service">
-                        <div class="service-icon tech-icon">⚙️</div>
-                        <h3 class="service-title">Automation</h3>
-                        <p class="service-description">Streamline your business processes with intelligent automation solutions that reduce manual work.</p>
-                        <ul class="service-features tech-features">
-                            <li>Business Process Automation</li>
-                            <li>Workflow Optimization</li>
-                            <li>Data Integration & Migration</li>
-                            <li>System Integration</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="service-card tech-service">
-                        <div class="service-icon tech-icon">🤖</div>
-                        <h3 class="service-title">Conversational AI Assistant</h3>
-                        <p class="service-description">Implement intelligent AI-powered chatbots and virtual assistants for 24/7 customer support.</p>
-                        <ul class="service-features tech-features">
-                            <li>AI Chatbot Development</li>
-                            <li>Natural Language Processing</li>
-                            <li>Multi-platform Integration</li>
-                            <li>Machine Learning Training</li>
-                        </ul>
-                    </div>
-                </div>
+        <!-- Category Selection Buttons -->
+        <div class="category-buttons">
+            <button class="category-btn btn-it active" onclick="showCategory('it')">
+                <span>💻 IT Services</span>
+            </button>
+            <button class="category-btn btn-tax" onclick="showCategory('tax')">
+                <span>📊 Indian Taxation Services</span>
+            </button>
+            <button class="category-btn btn-integrator" onclick="showCategory('integrator')">
+                <span>🔧 System Integrator</span>
+            </button>
+            <button class="category-btn btn-saas" onclick="showCategory('saas')">
+                <span>🚀 SaaS Products</span>
+            </button>
+        </div>
+        
+        <!-- IT Services Section -->
+        <div id="it-section" class="content-section active">
+            <div class="section-header it-header">
+                <h2>IT Services</h2>
+                <p>Innovative Technology Solutions for Modern Businesses</p>
             </div>
             
-            <!-- NABU Tax Consultancy Section -->
-            <div class="tax-section">
-                <div class="company-header tax-header">
-                    <h2>NABU Tax Consultancy</h2>
-                    <p>Expert Tax Solutions for Your Business Success</p>
+            <div class="services-grid">
+                <div class="service-card it-card">
+                    <div class="service-icon">📱</div>
+                    <h3 class="service-title">Mobile App Development</h3>
+                    <p class="service-description">Transform your business ideas into powerful mobile applications that engage users and drive growth.</p>
+                    <ul class="service-features">
+                        <li>Native iOS & Android Development</li>
+                        <li>Cross-platform Solutions</li>
+                        <li>UI/UX Design Integration</li>
+                        <li>App Store Optimization</li>
+                    </ul>
                 </div>
                 
-                <div class="compliance-badge">
-                    <h3>🏆 Certified Tax Professionals</h3>
-                    <p>Licensed and experienced tax consultants ensuring 100% compliance with Indian tax regulations</p>
+                <div class="service-card it-card">
+                    <div class="service-icon">🌐</div>
+                    <h3 class="service-title">Web App Development</h3>
+                    <p class="service-description">Build scalable, secure, and high-performance web applications that deliver exceptional user experiences.</p>
+                    <ul class="service-features">
+                        <li>Custom Web Applications</li>
+                        <li>Progressive Web Apps (PWA)</li>
+                        <li>API Development & Integration</li>
+                        <li>Cloud Deployment & Scaling</li>
+                    </ul>
                 </div>
                 
-                <div class="tax-highlights">
-                    <h3>📊 Tax Compliance Excellence</h3>
-                    <p>Comprehensive tax services ensuring your business stays compliant and tax-efficient</p>
+                <div class="service-card it-card">
+                    <div class="service-icon">💻</div>
+                    <h3 class="service-title">Website Development</h3>
+                    <p class="service-description">Create stunning, responsive websites that represent your brand perfectly and convert visitors into customers.</p>
+                    <ul class="service-features">
+                        <li>Responsive Web Design</li>
+                        <li>E-commerce Solutions</li>
+                        <li>Content Management Systems</li>
+                        <li>SEO Optimization</li>
+                    </ul>
                 </div>
                 
-                <div class="services-grid">
-                    <div class="service-card tax-service">
-                        <div class="service-icon tax-icon">📋</div>
-                        <h3 class="service-title">GST Registration</h3>
-                        <p class="service-description">Get your business registered under GST with our expert guidance and ensure compliance with all requirements.</p>
-                        <ul class="service-features tax-features">
-                            <li>New GST Registration Application</li>
-                            <li>GST Registration Amendment</li>
-                            <li>GSTIN Verification & Validation</li>
-                            <li>Post-registration Compliance</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="service-card tax-service">
-                        <div class="service-icon tax-icon">📊</div>
-                        <h3 class="service-title">GST Filing</h3>
-                        <p class="service-description">Ensure timely and accurate GST return filing with our comprehensive services and compliance records.</p>
-                        <ul class="service-features tax-features">
-                            <li>GSTR-1 (Outward Supplies)</li>
-                            <li>GSTR-3B (Monthly Summary)</li>
-                            <li>GSTR-9 (Annual Return)</li>
-                            <li>Late Fee & Penalty Management</li>
-                        </ul>
-                    </div>
-
-                    <div class="service-card tax-service">
-                        <div class="service-icon tax-icon">🧾</div>
-                        <h3 class="service-title">ITR Filing</h3>
-                        <p class="service-description">End-to-end Income Tax Return filing for individuals and businesses with accurate computation, deductions, and e-verification.</p>
-                        <ul class="service-features tax-features">
-                            <li>ITR-1 to ITR-7 Preparation & Filing</li>
-                            <li>Form 16/26AS Reconciliation</li>
-                            <li>Capital Gains & Business Income Support</li>
-                            <li>Deductions under Chapter VI-A</li>
-                            <li>Advance Tax & Self-Assessment Tax Guidance</li>
-                            <li>Notices & Compliance Support</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="service-card tax-service">
-                        <div class="service-icon tax-icon">💰</div>
-                        <h3 class="service-title">TDS/TCS Filing</h3>
-                        <p class="service-description">Manage your Tax Deducted at Source (TDS) and Tax Collected at Source (TCS) obligations efficiently.</p>
-                        <ul class="service-features tax-features">
-                            <li>TDS Return Filing (24Q, 26Q, 27Q)</li>
-                            <li>TCS Return Filing (27EQ)</li>
-                            <li>TDS Certificate Generation</li>
-                            <li>Interest & Penalty Calculations</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="service-card tax-service">
-                        <div class="service-icon tax-icon">👥</div>
-                        <h3 class="service-title">PF/ESI Registration and Filing</h3>
-                        <p class="service-description">Complete Employee Provident Fund (EPF) and Employee State Insurance (ESI) registration and filing services.</p>
-                        <ul class="service-features tax-features">
-                            <li>EPF Registration for Employers</li>
-                            <li>ESI Registration & Code Generation</li>
-                            <li>Monthly PF/ESI Return Filing</li>
-                            <li>Employee Enrollment & Management</li>
-                        </ul>
-                    </div>
+                <div class="service-card it-card">
+                    <div class="service-icon">🎨</div>
+                    <h3 class="service-title">UI/UX Design</h3>
+                    <p class="service-description">Design intuitive and beautiful user interfaces that provide exceptional user experiences.</p>
+                    <ul class="service-features">
+                        <li>User Research & Analysis</li>
+                        <li>Wireframing & Prototyping</li>
+                        <li>Visual Design & Branding</li>
+                        <li>Usability Testing</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card it-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3 class="service-title">Automation</h3>
+                    <p class="service-description">Streamline your business processes with intelligent automation solutions that reduce manual work.</p>
+                    <ul class="service-features">
+                        <li>Business Process Automation</li>
+                        <li>Workflow Optimization</li>
+                        <li>Data Integration & Migration</li>
+                        <li>System Integration</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card it-card">
+                    <div class="service-icon">🤖</div>
+                    <h3 class="service-title">Conversational AI Assistant</h3>
+                    <p class="service-description">Implement intelligent AI-powered chatbots and virtual assistants for 24/7 customer support.</p>
+                    <ul class="service-features">
+                        <li>AI Chatbot Development</li>
+                        <li>Natural Language Processing</li>
+                        <li>Multi-platform Integration</li>
+                        <li>Machine Learning Training</li>
+                    </ul>
                 </div>
             </div>
         </div>
         
-        <div class="why-choose">
-            <h2>💼 Why Choose NABU Group?</h2>
-            <p>✓ Expert Professionals | ✓ 100% Compliance Guarantee | ✓ Timely Delivery | ✓ Competitive Pricing | ✓ 24/7 Support | ✓ End-to-End Solutions</p>
+        <!-- Indian Taxation Services Section -->
+        <div id="tax-section" class="content-section">
+            <div class="section-header tax-header">
+                <h2>Indian Taxation Services</h2>
+                <p>Expert Tax Solutions for Your Business Success</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card tax-card">
+                    <div class="service-icon">📋</div>
+                    <h3 class="service-title">GST Registration</h3>
+                    <p class="service-description">Get your business registered under GST with our expert guidance and ensure compliance with all requirements.</p>
+                    <ul class="service-features">
+                        <li>New GST Registration Application</li>
+                        <li>GST Registration Amendment</li>
+                        <li>GSTIN Verification & Validation</li>
+                        <li>Post-registration Compliance</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card tax-card">
+                    <div class="service-icon">📊</div>
+                    <h3 class="service-title">GST Filing</h3>
+                    <p class="service-description">Ensure timely and accurate GST return filing with our comprehensive services and compliance records.</p>
+                    <ul class="service-features">
+                        <li>GSTR-1 (Outward Supplies)</li>
+                        <li>GSTR-3B (Monthly Summary)</li>
+                        <li>GSTR-9 (Annual Return)</li>
+                        <li>Late Fee & Penalty Management</li>
+                    </ul>
+                </div>
+
+                <div class="service-card tax-card">
+                    <div class="service-icon">🧾</div>
+                    <h3 class="service-title">ITR Filing</h3>
+                    <p class="service-description">End-to-end Income Tax Return filing for individuals and businesses with accurate computation, deductions, and e-verification.</p>
+                    <ul class="service-features">
+                        <li>ITR-1 to ITR-7 Preparation & Filing</li>
+                        <li>Form 16/26AS Reconciliation</li>
+                        <li>Capital Gains & Business Income Support</li>
+                        <li>Deductions under Chapter VI-A</li>
+                        <li>Advance Tax & Self-Assessment Tax Guidance</li>
+                        <li>Notices & Compliance Support</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card tax-card">
+                    <div class="service-icon">💰</div>
+                    <h3 class="service-title">TDS/TCS Filing</h3>
+                    <p class="service-description">Manage your Tax Deducted at Source (TDS) and Tax Collected at Source (TCS) obligations efficiently.</p>
+                    <ul class="service-features">
+                        <li>TDS Return Filing (24Q, 26Q, 27Q)</li>
+                        <li>TCS Return Filing (27EQ)</li>
+                        <li>TDS Certificate Generation</li>
+                        <li>Interest & Penalty Calculations</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card tax-card">
+                    <div class="service-icon">👥</div>
+                    <h3 class="service-title">PF/ESI Registration and Filing</h3>
+                    <p class="service-description">Complete Employee Provident Fund (EPF) and Employee State Insurance (ESI) registration and filing services.</p>
+                    <ul class="service-features">
+                        <li>EPF Registration for Employers</li>
+                        <li>ESI Registration & Code Generation</li>
+                        <li>Monthly PF/ESI Return Filing</li>
+                        <li>Employee Enrollment & Management</li>
+                    </ul>
+                </div>
+            </div>
         </div>
         
+        <!-- System Integrator Section -->
+        <div id="integrator-section" class="content-section">
+            <div class="section-header integrator-header">
+                <h2>System Integrator Services</h2>
+                <p>Comprehensive IT Infrastructure & Integration Solutions</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card integrator-card">
+                    <div class="service-icon">🖥️</div>
+                    <h3 class="service-title">IT Infrastructure Setup</h3>
+                    <p class="service-description">Servers, storage, networking, virtualization, structured cabling, UPS & data-center setup</p>
+                    <ul class="service-features">
+                        <li>Server Installation & Configuration</li>
+                        <li>Storage Solutions (SAN/NAS)</li>
+                        <li>Network Infrastructure Design</li>
+                        <li>Virtualization Implementation</li>
+                        <li>Structured Cabling Systems</li>
+                        <li>UPS & Power Management</li>
+                        <li>Data Center Setup & Management</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card integrator-card">
+                    <div class="service-icon">🔗</div>
+                    <h3 class="service-title">System Integration</h3>
+                    <p class="service-description">Hardware & software integration, multi-brand configuration, IoT & automation integration</p>
+                    <ul class="service-features">
+                        <li>Hardware & Software Integration</li>
+                        <li>Multi-brand System Configuration</li>
+                        <li>Legacy System Integration</li>
+                        <li>IoT Device Integration</li>
+                        <li>Automation Systems Integration</li>
+                        <li>Third-party API Integration</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card integrator-card">
+                    <div class="service-icon">🌐</div>
+                    <h3 class="service-title">Networking Solutions</h3>
+                    <p class="service-description">LAN/WAN, Wi-Fi, firewall, VPN, and security configuration</p>
+                    <ul class="service-features">
+                        <li>LAN/WAN Network Design</li>
+                        <li>Wi-Fi Network Setup & Optimization</li>
+                        <li>Firewall Configuration & Management</li>
+                        <li>VPN Setup & Remote Access</li>
+                        <li>Network Security Implementation</li>
+                        <li>Load Balancing & Redundancy</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card integrator-card">
+                    <div class="service-icon">☁️</div>
+                    <h3 class="service-title">Cloud & Virtualization</h3>
+                    <p class="service-description">Microsoft 365, Google Workspace, AWS, Azure migration & management</p>
+                    <ul class="service-features">
+                        <li>Microsoft 365 Implementation</li>
+                        <li>Google Workspace Setup</li>
+                        <li>AWS Cloud Migration & Management</li>
+                        <li>Azure Infrastructure Setup</li>
+                        <li>Hybrid Cloud Solutions</li>
+                        <li>Cloud Backup & Disaster Recovery</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card integrator-card">
+                    <div class="service-icon">💼</div>
+                    <h3 class="service-title">End-User Computing</h3>
+                    <p class="service-description">Supply & installation of desktops, laptops, printers, peripherals, and authorized after-sales support</p>
+                    <ul class="service-features">
+                        <li>Desktop & Laptop Procurement</li>
+                        <li>Printer & Scanner Installation</li>
+                        <li>Peripheral Device Setup</li>
+                        <li>Software Installation & Licensing</li>
+                        <li>User Training & Support</li>
+                        <li>Authorized After-sales Service</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card integrator-card">
+                    <div class="service-icon">🔧</div>
+                    <h3 class="service-title">Managed IT Services</h3>
+                    <p class="service-description">Annual Maintenance Contracts (AMC), preventive maintenance, remote monitoring</p>
+                    <ul class="service-features">
+                        <li>Annual Maintenance Contracts (AMC)</li>
+                        <li>Preventive Maintenance Programs</li>
+                        <li>24/7 Remote Monitoring</li>
+                        <li>Help Desk Support</li>
+                        <li>Incident Management</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card integrator-card">
+                    <div class="service-icon">📹</div>
+                    <h3 class="service-title">Surveillance & Security Systems</h3>
+                    <p class="service-description">CCTV, access control, biometric attendance, alarm systems</p>
+                    <ul class="service-features">
+                        <li>CCTV Camera Installation</li>
+                        <li>Video Management Systems</li>
+                        <li>Access Control Systems</li>
+                        <li>Biometric Attendance Systems</li>
+                        <li>Alarm & Intrusion Detection</li>
+                        <li>Remote Surveillance Monitoring</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card integrator-card">
+                    <div class="service-icon">📊</div>
+                    <h3 class="service-title">IT Consulting</h3>
+                    <p class="service-description">IT audits, solution design, capacity planning, and infrastructure modernization</p>
+                    <ul class="service-features">
+                        <li>IT Infrastructure Audits</li>
+                        <li>Solution Design & Architecture</li>
+                        <li>Capacity Planning & Forecasting</li>
+                        <li>Technology Roadmap Development</li>
+                        <li>Infrastructure Modernization</li>
+                        <li>Cost Optimization Strategies</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card integrator-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3 class="service-title">Authorized Warranty Support</h3>
+                    <p class="service-description">Certified service centre operations for brands like HP, Dell, Lenovo, etc.</p>
+                    <ul class="service-features">
+                        <li>HP Authorized Service Center</li>
+                        <li>Dell Warranty Support</li>
+                        <li>Lenovo Service Partner</li>
+                        <li>On-site & Carry-in Support</li>
+                        <li>Genuine Parts Replacement</li>
+                        <li>Extended Warranty Programs</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card integrator-card">
+                    <div class="service-icon">💾</div>
+                    <h3 class="service-title">Backup & Data Recovery</h3>
+                    <p class="service-description">Enterprise and SMB data backup solutions, disaster recovery planning, cloud & on-premise backup configuration</p>
+                    <ul class="service-features">
+                        <li>Enterprise Backup Solutions</li>
+                        <li>SMB Data Backup Systems</li>
+                        <li>Disaster Recovery Planning</li>
+                        <li>Cloud Backup Configuration</li>
+                        <li>On-premise Backup Setup</li>
+                        <li>Data Recovery Services</li>
+                        <li>Business Continuity Planning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SaaS Products Section -->
+        <div id="saas-section" class="content-section">
+            <div class="section-header saas-header">
+                <h2>SaaS Products</h2>
+                <p>Micro-SaaS Solutions for Business Management</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card saas-card">
+                    <div class="service-icon">👥</div>
+                    <h3 class="service-title">EMP Business</h3>
+                    <p class="service-description">Comprehensive employee management application that streamlines HR processes and enhances workforce productivity.</p>
+                    <ul class="service-features">
+                        <li>Employee Database Management</li>
+                        <li>Attendance & Time Tracking</li>
+                        <li>Payroll Processing</li>
+                        <li>Performance Management</li>
+                        <li>Leave Management System</li>
+                        <li>HR Analytics & Reports</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card saas-card">
+                    <div class="service-icon">📊</div>
+                    <h3 class="service-title">BarathBooks</h3>
+                    <p class="service-description">Advanced accounting software application designed for small to medium businesses with comprehensive financial management features.</p>
+                    <ul class="service-features">
+                        <li>Invoice Generation & Management</li>
+                        <li>Expense Tracking & Categorization</li>
+                        <li>Financial Reporting & Analytics</li>
+                        <li>Tax Calculation & Filing</li>
+                        <li>Multi-currency Support</li>
+                        <li>Cloud-based Data Storage</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact Section -->
         <div class="contact-section">
             <h2>Ready to Transform Your Business?</h2>
-            <p>Contact our expert teams today for personalized solutions that drive your business success.</p>
+            <p>Contact our expert team today for personalized solutions that drive your business success.</p>
             
-                <div class="contact-grid">
+            <div class="contact-grid">
                 <div class="contact-item">
-                    <h3>🔧 NABU Technologies</h3>
+                    <h3>📧 Email</h3>
                     <p>info@nabutechnologies.in</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📞 Phone</h3>
                     <p>+91 9360413505</p>
                 </div>
                 <div class="contact-item">
@@ -1018,5 +856,25 @@
             </div>
         </div>
     </div>
+    
+    <script>
+        function showCategory(category) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(category + '-section').classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.closest('.category-btn').classList.add('active');
+        }
+    </script>
 </body>
 </html>
