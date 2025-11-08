@@ -255,6 +255,11 @@
             box-shadow: 0 8px 30px rgba(0,0,0,0.3);
         }
         
+        /* Hide elements for limited view */
+        .hide-in-limited {
+            display: none !important;
+        }
+        
         /* Content Sections */
         .content-section {
             display: none;
@@ -501,7 +506,7 @@
             <button class="category-btn btn-it active" onclick="showCategory('it')">
                 <span>💻 IT Services</span>
             </button>
-            <button class="category-btn btn-tax" onclick="showCategory('tax')">
+            <button class="category-btn btn-tax hide-in-limited" onclick="showCategory('tax')">
                 <span>📊 Indian Taxation Services</span>
             </button>
             <button class="category-btn btn-integrator" onclick="showCategory('integrator')">
@@ -595,7 +600,7 @@
         </div>
         
         <!-- Indian Taxation Services Section -->
-        <div id="tax-section" class="content-section">
+        <div id="tax-section" class="content-section hide-in-limited">
             <div class="section-header tax-header">
                 <h2>Indian Taxation Services</h2>
                 <p>Expert Tax Solutions for Your Business Success</p>
@@ -887,7 +892,51 @@
     </div>
     
     <script>
+        // Read URL parameters on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const view = urlParams.get('view');
+            
+            if (view === 'limited') {
+                // Hide tax-related elements
+                document.querySelectorAll('.hide-in-limited').forEach(element => {
+                    element.style.display = 'none';
+                });
+                
+                // Ensure IT section is shown by default in limited view
+                const itSection = document.getElementById('it-section');
+                const taxSection = document.getElementById('tax-section');
+                
+                if (taxSection && taxSection.classList.contains('active')) {
+                    taxSection.classList.remove('active');
+                }
+                if (itSection) {
+                    itSection.classList.add('active');
+                }
+                
+                // Set IT button as active
+                const itButton = document.querySelector('.btn-it');
+                const taxButton = document.querySelector('.btn-tax');
+                if (taxButton) taxButton.classList.remove('active');
+                if (itButton) itButton.classList.add('active');
+            } else {
+                // Show all elements (full view or no parameter)
+                document.querySelectorAll('.hide-in-limited').forEach(element => {
+                    element.style.display = '';
+                });
+            }
+        });
+        
         function showCategory(category) {
+            // Check if we're in limited view and trying to access tax
+            const urlParams = new URLSearchParams(window.location.search);
+            const view = urlParams.get('view');
+            
+            if (view === 'limited' && category === 'tax') {
+                // Don't allow access to tax section in limited view
+                return;
+            }
+            
             // Hide all sections
             document.querySelectorAll('.content-section').forEach(section => {
                 section.classList.remove('active');
@@ -899,10 +948,18 @@
             });
             
             // Show selected section
-            document.getElementById(category + '-section').classList.add('active');
+            const targetSection = document.getElementById(category + '-section');
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
             
             // Add active class to clicked button
-            event.target.closest('.category-btn').classList.add('active');
+            if (event && event.target) {
+                const clickedBtn = event.target.closest('.category-btn');
+                if (clickedBtn) {
+                    clickedBtn.classList.add('active');
+                }
+            }
         }
     </script>
 </body>
